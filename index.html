@@ -7,7 +7,42 @@
 	<title>Document</title>
 </head>
 <body>
-	<h1>TRABALHANDO...</h1>
-	<p>futuro site de ecologia</p>
+	<script>
+		const link="https://docs.google.com/document/d/15shFR1VnEkFYkt_T7HS9tYhvC5EQ6xufzNHX5hn_L0M/export?format=html"
+
+		fetch(link).then(result => {
+			console.log(result)
+			result.text().then(data => {
+				r = document.createElement("html")
+				r.innerHTML = data;
+
+				console.log(data)
+
+				for(let node of r.childNodes){
+					switch(node.tagName){
+						case "HEAD":
+							//TODO: clone styles
+							// for(let header of node.childNodes){
+							// 	switch(header.tagName){
+							// 		case "STYLE":
+							// 			document.head.appendChild(header);
+							// 			break;
+							// 		default: console.log("unwanted header",header.tagName,header)
+							// 	}
+							// }
+							//find styles	
+							break;
+						case "BODY":
+							for(let body of node.children){
+								//clonar conteúdo
+								document.body.appendChild(body.cloneNode(true))
+							}
+							break;
+					}
+				}	
+			})
+		})
+	</script>
+		
 </body>
 </html>
