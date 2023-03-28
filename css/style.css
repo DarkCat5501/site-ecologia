@@ -1,0 +1,138 @@
+:root{
+	--nav-color: rgb(70, 105, 87);
+}
+body {
+	display: flex;
+	flex-direction: column;
+	padding: 0;
+	margin: 0;
+	width: 100vw;
+	height: 100vh;
+}
+main {
+	overflow-y: hidden;
+}
+section {
+	padding-inline: 0.5rem;
+}
+
+ol {
+	display: flex;
+	flex-direction: column;
+	gap: 0.76rem;
+}
+
+.navigation {
+	position: sticky;top:0;
+	display: flex;
+	background-color: var(--nav-color);
+	color:white;
+	padding:0; margin:0;
+	height: fit-content;
+	width: 100%;
+}
+
+.topics {
+	display: flex;
+	flex-direction: column;
+	margin: 0; padding: 0;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+.topics li {
+	white-space: nowrap;
+	display: flex;
+	justify-content: start;
+}
+
+.topics li:hover {
+	background-color: #7b6f58b0;
+	color: lightsalmon;
+}
+
+.topics a, .topics a:active, .topics a:focus {
+	text-decoration: none;
+	white-space: nowrap;
+	color: inherit;
+	padding: 0.5rem;
+	text-overflow: ellipsis;
+	overflow-x: hidden;
+}
+
+
+
+.menu {
+	background-color: var(--nav-color);
+	width: 0%;
+	height: 100%;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	transition: 1s all ease-in-out;
+}
+
+.menu[open]{
+	width: 350px;
+}
+
+.error {
+	display: block;
+	color: white;
+	background-color: red;
+	text-align: center;
+}
+
+.title {
+	font-size: 1.5rem;
+	font-style: italic;
+	font-weight: bold;
+}
+
+.side-by-side {
+	display: flex;
+	flex-direction: row;
+}
+
+.card {
+	display: flex;
+	background-color: #47464432;
+	border-radius: 10px;
+	margin:10px;
+}
+
+.flex { display: flex;}
+.row { flex-direction: row; }
+.column { flex-direction: column; }
+.full { width: 100%; height:100%; }
+.w-full { width: 100%; }
+.h-full { height:100%; }
+.scroll { overflow: scroll;}
+.scroll-x { overflow-x: scroll;}
+.scroll-y { overflow-y: scroll;}
+
+.t-centered { text-align: center;}
+
+.debug { outline: 1px solid red; }
+
+.icon-btn {
+	background-color: transparent;
+	border:none;
+}
+
+.border-sm { border: 0.1rem; }
+.t-nowrap { white-space: nowrap;}
+.flex-nowrap { flex-wrap: nowrap;}
+
+hr.dashed {
+	border-style: dashed;
+	border-width: 0.1rem;
+	border-color: black;
+}
+
+
+
+@media only screen and (max-width: 920px) {
+	.side-by-side {
+		flex-direction: column;
+	}
+}

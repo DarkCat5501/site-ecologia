@@ -5,72 +5,37 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
-	<link rel="stylesheet" href="./style.css"/>
+	<link rel="stylesheet" href="./css/style.css"/>
+	<script src="./scripts/main.js" defer></script>
+	<link rel="stylesheet" href="./css/font-awesome.min.css">
 </head>
 <body>
-	<script>
-		const link="https://docs.google.com/document/d/15shFR1VnEkFYkt_T7HS9tYhvC5EQ6xufzNHX5hn_L0M/export?format=html"
 
-		function getClassDelimiter(text){
-			const delimiterR = new RegExp(/&<([^>.]*)+>/);
-			const result = delimiterR.exec(text);
-			if(result) return result[1]
-			return false;
-		}
+	<nav class="navigation">
+		<!-- <h1>MEMO</h1> -->
+		<button class="icon-btn" onclick="handleMenu(document.getElementById('menu'))">
+			<i class="fa fa-bars fa-2x"></i>
+		</button>
+	</nav>
+	<main class="flex full">
+		<div id="menu" class="menu">
+			
+			<div class="w-full t-centered t-nowrap">
+				<h3>
+					tópicos
+					<i class="fa fa-compass" aria-hidden="true"></i>
+				</h3>
+				<hr class="dashed">
+			</div>
 
-		fetch(link).then(result => {
-			console.log(result)
-			result.text().then(data => {
-				r = document.createElement("html")
-				r.innerHTML = data;
+			<ul id="topics" class="topics">
+			</ul>
+		</div>
+		<div id="content" class="scroll-y full mt-1">
+		</div>
+	</main>
+	<footer>
 
-				for(let node of r.childNodes){
-					switch(node.tagName){
-						// case "HEAD":
-						// 	//TODO: clone styles
-						// 	// for(let header of node.childNodes){
-						// 	// 	switch(header.tagName){
-						// 	// 		case "STYLE":
-						// 	// 			document.head.appendChild(header);
-						// 	// 			break;
-						// 	// 		default: console.log("unwanted header",header.tagName,header)
-						// 	// 	}
-						// 	// }
-						// 	//find styles	
-						// 	break;
-						case "BODY":
-
-							const content = [document.body];
-
-							for(let body of node.children){
-								//clonar conteúdo
-								const text = body.textContent;
-
-								const delim =getClassDelimiter(text);
-								if(delim !== false){
-									if(delim){
-										const newDiv = document.createElement("div");
-										newDiv.classList.add(delim)
-										content[content.length-1].appendChild(newDiv);
-										content.push(newDiv)
-									} else if (content.length>1){ content.pop() }
-									else {
-										const error = document.createElement("span")
-										error.classList.add("error")
-										error.textContent = "final inesperado de delimitador"
-										content[content.length-1].appendChild(error);
-									}
-								} else {
-									const element = body.cloneNode(true)
-									content[content.length-1].appendChild(element)
-								}
-							}
-							break;
-					}
-				}	
-			})
-		})
-	</script>
-		
+	</footer>
 </body>
 </html>
