@@ -10,7 +10,6 @@
 	<link rel="stylesheet" href="./css/font-awesome.min.css">
 </head>
 <body>
-
 	<nav class="navigation">
 		<!-- <h1>MEMO</h1> -->
 		<button class="icon-btn" onclick="handleMenu(document.getElementById('menu'))">
@@ -27,15 +26,18 @@
 				</h3>
 				<hr class="dashed">
 			</div>
-
+			
 			<ul id="topics" class="topics">
 			</ul>
 		</div>
-		<div id="content" class="scroll-y full mt-1">
+		<div class="flex full relative">
+			<canvas id="mainCanvas" class="absolute positioned full"></canvas>
+
+			<div id="content" class="relative scroll-y full mt-1">
+			</div>
 		</div>
 	</main>
 	<footer>
-
 	</footer>
 </body>
 </html>
