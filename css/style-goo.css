@@ -1,0 +1,261 @@
+:root{
+	--nav-color: rgb(70, 105, 87);
+}
+body {
+	display: flex;
+	flex-direction: column;
+	padding: 0;
+	margin: 0;
+	width: 100vw;
+	height: 100vh;
+	background-image: url("./forest.png");
+}
+main {
+	overflow-y: hidden;
+}
+section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	padding: 2rem;
+	max-width: 700px;
+	margin-inline:auto;
+	background-color: #f4f4f4dd;
+	border-radius: 10px;
+}
+
+ol {
+	display: flex;
+	flex-direction: column;
+
+	list-style-type: none;
+}
+
+.navigation {
+	position: sticky;top:0;
+	display: flex;
+	background-color: var(--nav-color);
+	color:white;
+	padding:0; margin:0;
+	height: fit-content;
+	width: 100%;
+}
+
+.topics {
+	display: flex;
+	flex-direction: column;
+	margin: 0; padding: 0;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+.topics li {
+	white-space: nowrap;
+	display: flex;
+	justify-content: start;
+}
+
+.topics li:hover {
+	background-color: #7b6f58b0;
+	color: lightsalmon;
+}
+
+.topics a, .topics a:active, .topics a:focus {
+	text-decoration: none;
+	white-space: nowrap;
+	color: inherit;
+	padding: 0.5rem;
+	text-overflow: ellipsis;
+	overflow-x: hidden;
+}
+
+.menu {
+	background-color: var(--nav-color);
+	width: 0%;
+	height: 100%;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	transition: 1s all ease-in-out;
+}
+
+.menu[open]{
+	width: 350px;
+}
+
+.error {
+	display: block;
+	color: white;
+	background-color: red;
+	text-align: center;
+}
+
+.title {
+	font-size: 1.5rem;
+	font-style: italic;
+	font-weight: bold;
+}
+
+.inline {
+	display: flex;
+	flex-direction: row;
+}
+
+.card {
+	display: flex;
+	border-radius: 10px;
+	border:2px solid #47464432;
+	padding-inline: 1rem;
+}
+
+.flex { display: flex;}
+.row { flex-direction: row; }
+.column { flex-direction: column; }
+.full { width: 100%; height:100%; }
+.w-full { width: 100%; }
+.h-full { height:100%; }
+.scroll { overflow: scroll;}
+.scroll-x { overflow-x: scroll;}
+.scroll-y { overflow-y: scroll;}
+
+.p-full > * { width: 100%; height:100%; }
+.pw-full > * { width: 100%; }
+.ph-full > * { height:100%; }
+
+.t-centered { text-align: center;}
+
+.debug { outline: 1px solid red; }
+
+.icon-btn {
+	background-color: transparent;
+	border:none;
+}
+img {
+	width: 100%;
+	height: 100%;
+}
+
+.border-sm { border: 0.1rem; }
+.t-nowrap { white-space: nowrap;}
+.flex-nowrap { flex-wrap: nowrap;}
+
+hr.dashed {
+	border-style: dashed;
+	border-width: 0.1rem;
+	border-color: black;
+}
+
+.absolute { position:absolute; }
+.relative { position:relative; }
+.positioned { 
+	left: var( --position-x, 0px);
+	top: var( --position-y, 0px);
+	z-index: var( --position-z, 0);
+}
+
+.gap-1 { gap:1rem;   }
+.gap-2 { gap:1.5rem; }
+.gap-3 { gap:2rem;   }
+.gap-4 { gap:2.5rem; }
+.gap-5 { gap:3rem;   }
+.gap-6 { gap:3.5rem; }
+.gap-7 { gap:4rem;   }
+.gap-8 { gap:4.5rem; }
+.gap-9 { gap:5rem;   }
+.gap-10 { gap:5.5rem; }
+
+.gap-y-1 { row-gap:1rem;   }
+.gap-y-2 { row-gap:1.5rem; }
+.gap-y-3 { row-gap:2rem;   }
+.gap-y-4 { row-gap:2.5rem; }
+.gap-y-5 { row-gap:3rem;   }
+.gap-y-6 { row-gap:3.5rem; }
+.gap-y-7 { row-gap:4rem;   }
+.gap-y-8 { row-gap:4.5rem; }
+.gap-y-9 { row-gap:5rem;   }
+.gap-y-10 { row-gap:5.5rem; }
+
+.gap-x-1 { column-gap:1rem;   }
+.gap-x-2 { column-gap:1.5rem; }
+.gap-x-3 { column-gap:2rem;   }
+.gap-x-4 { column-gap:2.5rem; }
+.gap-x-5 { column-gap:3rem;   }
+.gap-x-6 { column-gap:3.5rem; }
+.gap-x-7 { column-gap:4rem;   }
+.gap-x-8 { column-gap:4.5rem; }
+.gap-x-9 { column-gap:5rem;   }
+.gap-x-10 { column-gap:5.5rem; }
+
+.m-1 { margin:1rem;   }
+.m-2 { margin:1.5rem; }
+.m-3 { margin:2rem;   }
+.m-4 { margin:2.5rem; }
+.m-5 { margin:3rem;   }
+.m-6 { margin:3.5rem; }
+.m-7 { margin:4rem;   }
+.m-8 { margin:4.5rem; }
+.m-9 { margin:5rem;   }
+.m-10 { margin:5.5rem; }
+.p-1 { padding:1rem;   }
+.p-2 { padding:1.5rem; }
+.p-3 { padding:2rem;   }
+.p-4 { padding:2.5rem; }
+.p-5 { padding:3rem;   }
+.p-6 { padding:3.5rem; }
+.p-7 { padding:4rem;   }
+.p-8 { padding:4.5rem; }
+.p-9 { padding:5rem;   }
+.p-10 { padding:5.5rem; }
+
+
+.space {
+	height: 100px;
+}
+
+.grid {
+	display: grid;
+}
+
+.grid-2x {
+	grid-template-areas: 
+		"a b"
+		"c b";
+}
+
+.grid-a {
+	grid-area: a;
+}
+
+.grid-b {
+	grid-area: b;
+}
+
+.grid-c {
+	grid-area: c;
+}
+
+.grid-d {
+	grid-area: d;
+}
+section:has(.space) {
+	background-color: red;
+}
+
+@media only screen and (max-width: 920px) {
+	.inline {
+		flex-direction: column;
+	}
+	.grid-2x {
+		grid-template-areas: 
+			"a"
+			"b"
+			"c";
+	}
+}
+
+@media only screen and (width > 1080px) {
+	section {
+		max-width: fit-content;
+		margin-inline: 10rem;
+	}
+}
